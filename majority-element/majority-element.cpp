@@ -3,13 +3,13 @@ class Solution {
 public:
     int _majorityHashing(vector<int>& nums) {
         
-        unordered_map<int,int> ump;
+        map<int,int> ump;
         int sz = nums.size();
-        
+        int majority = (sz >>1);
         for(auto &it : nums) ump[it]++;
         
         for(int i = 0; i < ump.size(); ++i) {
-            if(ump[i] > (sz/2)) return i;
+            if(ump[i] > majority) return i;
         }
         return 0;
     }
