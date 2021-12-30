@@ -30,11 +30,33 @@ public:
         return res;  
     }
 
+public: 
+    int _longestConsecutiveReadable(vector<int>& nums) {
+    
+        set<int> hashSet;
+        for(auto& it : nums) hashSet.insert(it);
+        
+        int longestStreak = 0;
+        
+        for(int& num : nums) {
+            if(!hashSet.count(num - 1)) {
+                int currNum = num;
+                int currStreak = 1;
+                while(hashSet.count(currNum + 1)) {
+                    currStreak += 1;
+                    currNum += 1;
+                }
+                longestStreak = max(longestStreak, currStreak);
+            }
+        } 
+        return longestStreak;
+    }
     
     
     
 public:
     int longestConsecutive(vector<int>& nums) {
-       return _longestConsecutiveHash(nums);
+       // return _longestConsecutiveHash(nums);
+       return _longestConsecutiveReadable(nums);
     }
 };
