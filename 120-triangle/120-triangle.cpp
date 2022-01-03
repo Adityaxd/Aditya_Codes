@@ -2,6 +2,8 @@ class Solution {
     
 public:
     int _minimumTotal(vector<vector<int>>& triangle) {
+        if(triangle.size() == 1 )return triangle[0][0];
+        
         vector<int> dp = triangle[triangle.size() - 1];
         
         for(int i = triangle.size() - 2; i >= 0; i--) 
