@@ -1,9 +1,6 @@
 class Solution {
- public:
-    void calculateSubSets(int idx, int sum, int sz, vector<int>& nums, vector<vector<int>>& res) {
-        
-    }
-public:
+
+    public:
     vector<vector<int>> bitWise(vector<int>& nums) {
         int powersetSize = 1 << nums.size();
        vector<vector<int>> powerSet(powersetSize);
