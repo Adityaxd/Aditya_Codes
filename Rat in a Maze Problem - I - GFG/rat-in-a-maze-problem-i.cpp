@@ -10,8 +10,8 @@ using namespace std;
 
 class Solution{
     public:
-    
     void solve(int i, int j, vector<vector<int>>&a, int n, vector<string>& ans, string move, vector<vector<int>> &vis) {
+        //Base Case if we reach our destination index given.
         if(i == n-1 && j == n-1){
             ans.push_back(move);
             return;
@@ -42,12 +42,11 @@ class Solution{
             vis[i][j] = 0;
         } 
     }
-    
-    vector<string> findPath(vector<vector<int>> &m, int n) {
+    vector<string> findPath(vector<vector<int>> &m, int destination) {
         // Your code goes here
         vector<string> res;
-        vector<vector<int>> vis(n, vector<int>(n,0));
-        if(m[0][0] == 1) solve(0,0,m,n,res,"",vis);
+        vector<vector<int>> vis(destination, vector<int>(destination,0));
+        if(m[0][0] == 1) solve(0,0,m,destination,res,"",vis);
         return res;
     }
 };
