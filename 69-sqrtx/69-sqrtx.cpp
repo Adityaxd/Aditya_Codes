@@ -11,9 +11,11 @@ public:
         while((high - low) > 1){
             mid = low + (high - low) / 2;
             long long int sqr = (mid * mid);
-            if(sqr > x){
+            
+            if(sqr > x) {
                 high = mid;
-            }else{
+            }
+            else {
                 low = mid;
             }
         }
