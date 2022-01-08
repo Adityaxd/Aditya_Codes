@@ -1,26 +1,16 @@
 class Solution {
 public:
     int peakSoln(vector<int>& nums) {
-        if(nums.size() < 2) return nums.size();
-        int sz = nums.size();
-        int i = 1; 
-        while(i < sz && nums[i] == nums[i - 1]) i++;
-        if(i == sz) return 1;
         
-        int c = 2;
+       int sz = nums.size();
+       if(sz == 0) return 0;
+       int peak = 1, valley = 1;
         
-        bool inc = nums[i] > nums[i - 1];
-        while(i < sz) {
-            if(inc) {
-                while(i < sz && nums[i] >= nums[i - 1]) i++;
-                if(i < sz) c++; inc = false;
-            }
-            else {
-                while(i < sz && nums[i] <= nums[i - 1]) i++;
-                if(i < sz) c++; inc = true;
-            }
-        }      
-        return c;
+        for(int i = 1; i < nums.size(); i++) {
+            if (nums[i] > nums[i - 1]) peak = valley + 1;
+            else if (nums[i] < nums[i - 1]) valley = peak + 1;
+        }
+        return max(peak,valley);
     }
 public:
     int wiggleMaxLength(vector<int>& nums) {
