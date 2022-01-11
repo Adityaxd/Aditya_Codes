@@ -3,21 +3,24 @@ class Solution {
     
 public:
    void _combinationSum(int idx, int target, vector<int>& candidates, vector<int>& ds, vector<vector<int>>& ans) {
+    
+       // Base case 
        
-       if(idx == candidates.size()) {
-           if(target == 0) {
-               ans.push_back(ds);
-           }
-           return;
-       } 
+        if(idx == candidates.size()) {
+            if(target == 0){
+                ans.push_back(ds);
+            }
+            return;
+        }
+       
        
        if(candidates[idx] <= target) {
-            ds.push_back(candidates[idx]);
+           ds.push_back(candidates[idx]);
            _combinationSum(idx, target - candidates[idx], candidates, ds, ans);
-            ds.pop_back();
+           ds.pop_back();
        }
-        _combinationSum(idx + 1, target, candidates, ds, ans);
-    }    
+       _combinationSum(idx + 1, target, candidates,ds, ans);
+   }
     
     
 public:
