@@ -5,7 +5,7 @@ public:
         int left = 1, right = *max_element(piles.begin(),piles.end());
         
         while (left < right) {
-            int mid = (left + right) / 2;
+            int mid = (left + right) >> 1;
             int hoursSpentEating = 0;
             
             for(int pile : piles) hoursSpentEating += pile / mid + (pile % mid != 0); 
