@@ -9,8 +9,9 @@ public:
         for(auto x : s) {
             if( x == '(' or x == '{' or x == '[') stk.push(x);
             else {
-                if( stk.empty() or ( stk.top() == '(' and x != ')' ) or ( stk.top() == '{' and x != '}' ) or (stk.top() == '[' and x != ']' ) ) return false;
-                    stk.pop();
+                if( stk.empty() or ( stk.top() == '(' and x != ')' ) or ( stk.top() == '{' and x != '}' ) or (stk.top() == '[' and x != ']' ) ) 
+                    return false;
+                else stk.pop();
             }
         }
         return stk.empty();   
