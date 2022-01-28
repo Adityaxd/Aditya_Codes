@@ -1,5 +1,5 @@
 # Subset Sums
-## Basic 
+## Easy
 <div class="problem-statement">
                 <p></p><div class="entry-content">
 <p><span style="font-size:18px">Given a&nbsp;list <strong>arr</strong>&nbsp;of <strong>N</strong> integers, print sums of all subsets in it.</span></p>
